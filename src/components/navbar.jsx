@@ -7,22 +7,22 @@ const NavBar = props => {
   // }, 2000);
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <h1 className="navbar-brand">NavBar</h1>
+      <nav className="navbar navbar-expand-lg navbar-light bg-danger">
+        <h1 className="navbar-brand text-white">Poke'Times</h1>
         <div className="collapse navbar-collapse ">
-          <ul className="navbar-nav ">
+          <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link text-white" to="/">
                 Home
               </Link>{" "}
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
+              <NavLink className="nav-link text-white" to="/about">
                 About
               </NavLink>{" "}
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/contact">
+              <NavLink className="nav-link text-white" to="/contact">
                 Contact
               </NavLink>{" "}
             </li>
