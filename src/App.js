@@ -4,7 +4,8 @@ import "./App.css";
 import NavBar from "./components/navbar";
 import About from "./components/about";
 import Contact from "./components/contact";
-import { Route, BrowserRouter as Router } from "react-router-dom";
+import Post from "./components/post";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 class App extends Component {
   // state = {
   //   counters: [{ id: 1, value: 0 }, { id: 2, value: 0 }, { id: 3, value: 1 }]
@@ -14,9 +15,12 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar />
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/:post_id" component={Post} />
+          </Switch>
         </div>
       </Router>
     );
