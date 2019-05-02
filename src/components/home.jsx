@@ -1,21 +1,10 @@
 import React, { Component } from "react";
-import axios from "axios";
 import { NavLink, Link } from "react-router-dom";
 import Pokeball from "../Capture.PNG";
+import { connect } from "react-redux"; // a function that call a Higher order component to connect to redux store
 class Home extends Component {
-  state = {
-    posts: []
-  };
-  componentDidMount() {
-    axios.get("https://jsonplaceholder.typicode.com/posts").then(res =>
-      this.setState({
-        posts: res.data.slice(0, 10)
-      })
-    );
-  }
-
   render() {
-    const { posts } = this.state;
+    const { posts } = this.props;
     const postsList = posts.length ? (
       posts.map(post => {
         const path = "/" + post.id;
@@ -55,5 +44,9 @@ class Home extends Component {
     );
   }
 }
-
-export default Home;
+const mapStateToProps = state => {
+  return {
+    posts: state.posts
+  };
+};
+export default connect(mapStateToProps)(Home);
